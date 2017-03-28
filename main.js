@@ -15,11 +15,18 @@ var displayHealth2 = document.createElement('p')
 var button1 = document.createElement('button')
 var button2 = document.createElement('button')
 
+var userResult2 = document.createElement('p').innerText = " "
+
+playerBox1.style.backgroundColor = 'lightblue'
+playerBox2.style.backgroundColor = 'tomato'
+
+
 theBody.append(container)
 container.append(playerBox1)
 container.append(playerBox2)
 playerBox1.append(displayHealth1)
 playerBox2.append(displayHealth2)
+playerBox2.append(userResult2)
 
 
 playerBox1.className = 'player'
@@ -54,8 +61,9 @@ button2.onclick = function takeTurn2() {
 	else {
 	displayHealth1.innerText = "Player 1 health is " + players.player1.health;
 	playerBox1.append(button1)
-	//var userResult = document.createElement('p').innerText = 'console.log("your die roll was " + result)';
 	//display die result
+	userResult2.innerText = 'your die roll was' + result;
+	playerBox2.append(userResult2)
 	}
 }
 
